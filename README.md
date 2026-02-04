@@ -17,6 +17,7 @@ git clone git@github.com:YourName/f27wd-coursework.git
 ## Daily Workflow
 ### Update local main branch
 git checkout main
+
 git pull origin main
 
 ### Create a new branch - EVERY task/feature
