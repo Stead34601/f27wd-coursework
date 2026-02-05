@@ -1,0 +1,23 @@
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background-color);
+  padding: 15px 40px;
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-links a {
+  color: var(--text-color);
+}
+
+.navbar-links a:hover {
+  color: var(--color-primary);
+}

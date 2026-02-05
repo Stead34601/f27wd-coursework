@@ -3,12 +3,19 @@
 :root {
     --font-family: Arial, Helvetica, sans-serif;
 
-    --color-primary: #ffffff;
-    --color-secondary: #ffffff;
-    --color-background: #ffffff;
-    --color-surface: #ffffff;
-    --color-border: #ffffff;
-    --color-text: #ffffff;
+    /* Placeholder colors so I dont hurt my eyes*/
+    --color-primary: #4f8cff;
+    --color-primary-hover: #3a6fd8;
+    --color-secondary: #a78bfa;
+    --color-background: #0f172a;
+    --color-surface: #1e293b; 
+    --color-border: #334155;
+    --color-text: #e2e8f0;
+
+    --color-success: #22c55e;
+    --color-warning: #f59e0b;
+    --color-error: #ef4444;
+
 }
 
 body {
