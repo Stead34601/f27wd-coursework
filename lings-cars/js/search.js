@@ -1,5 +1,5 @@
 //takes in the mockarray
-import { mockArray } from "./mockarray";
+import { mockArray } from "./mockarray.js";
 
 //getting elements from html
 const sortField = document.getElementById("search-sort-field");
@@ -18,26 +18,31 @@ var bodyStyle = styleField.value;
 // listeners which check for when someone updates the box
 sortField.addEventListener("change", () => {
   sortBy = sortField.value;
+  console.log("Sort Field Updated")
   updateSearch();
 });
 
 sortOrderField.addEventListener("change", () => {
   sortOrder = sortOrderField.value;
+  console.log("Sort Order Updated")
   updateSearch();
 });
 
 makeField.addEventListener("input", () => {
   make = makeField.value;
+  console.log("Make Updated")
   updateSearch();
 });
 
 modelField.addEventListener("input", () => {
   model = modelField.value;
+  console.log("Model Updated")
   updateSearch();
 });
 
 styleField.addEventListener("change", () => {
   bodyStyle = styleField.value;
+  console.log("Style Updated")
   updateSearch();
 });
 
@@ -70,23 +75,97 @@ function updateSearch() {
     for (var i = newSearchArray.length-1 ;i>=0;i--) {
         //filters based on model, only filters when someone has data in the field
         var removeThis = false;
-        if (make && newSearchArray[i].brand !== make) {
+        if (make && (newSearchArray[i].brand != make)) {
             removeThis = true;
         }
 
-        if (model && newSearchArray[i].model !== model) {
+        if (model && (newSearchArray[i].model != model)) {
             removeThis = true;
         }
 
-        if (bodyStyle && newSearchArray[i].bodyStyle !== bodyStyle) {
+        if ((newSearchArray[i].bodystyle != bodyStyle)) {
             removeThis = true;
         }
-        if (removeThis) {
+        if (removeThis == true) {
             newSearchArray.splice(i,1);
         }
     }
     //returns the array
+    displayVehicles(newSearchArray);
     return newSearchArray;
 }
+
+//for displaying the array
+//recieve the div
+const displayDiv = document.getElementById("search-results");
+function displayVehicles(vehiclesToDisplay) {
+    //clear the div
+    displayDiv.innerHTML = '';
+    //loop through each element of the search array
+    for (var i = 0; i<vehiclesToDisplay.length;i++) {
+
+        //make an a tag so its clickable
+        const carA = document.createElement('a');
+        carA.style.display = 'block';
+        //this assigns the width for the entire result box
+        carA.style.width = '60%';
+        //this should be changed to the appropriate link by uncommenting line 121
+        carA.href = "https://en.wikipedia.org/wiki/Lockheed_S-3_Viking";
+        //carA.href = vehiclesToDisplay[i].pageLink;
+        //make a div with its attributes
+        const carDiv = document.createElement("div");
+        carDiv.id = (vehiclesToDisplay[i].brand + i);
+        const textBlock = document.createElement("div");
+
+        //type
+        const typePara = document.createElement('p');
+        const typeText = document.createTextNode("Type: " + vehiclesToDisplay[i].type);
+        typePara.append(typeText);
+        textBlock.appendChild(typePara);
+
+        //Brand
+        const brandPara = document.createElement('p');
+        const brandText = document.createTextNode("Brand: " + vehiclesToDisplay[i].brand);
+        brandPara.append(brandText)
+        textBlock.appendChild(brandPara);
+
+        //Model
+        const modelPara = document.createElement('p');
+        const modelText = document.createTextNode("Model: " + vehiclesToDisplay[i].model);
+        modelPara.append(modelText)
+        textBlock.appendChild(modelPara);
+
+        //year
+        const yearPara = document.createElement('p');
+        const yearText = document.createTextNode("Year: " + vehiclesToDisplay[i].year);
+        yearPara.append(yearText)
+        textBlock.appendChild(yearPara);
+
+        //seats
+        const seatsPara = document.createElement('p');
+        const seatsText = document.createTextNode("Number of seats: " + vehiclesToDisplay[i].seats);
+        seatsPara.append(seatsText);
+        textBlock.appendChild(seatsPara);
+
+        //price
+        const pricePara = document.createElement('p');
+        const priceText = document.createTextNode("Price: " + vehiclesToDisplay[i].price);
+        pricePara.append(priceText);
+        textBlock.appendChild(pricePara);
+        carDiv.appendChild(textBlock);
+
+        //add the image
+        //lines below should be uncommented when the images are added
+        //const imageComponent = document.createElement('img');
+        //imageComponent.src = vehiclesToDisplay[i].imagePath;
+        //lines above should be uncommented when images are added
+        carA.appendChild(carDiv);
+
+
+        displayDiv.appendChild(carA);
+    }
+}
+//this needs to be called 1 time at the start
+updateSearch();
 //THIS FUNCTION NEEDS TO BE CALLED INSIDE OF SEARCH.HTML!!!!
 export {updateSearch}

@@ -13,14 +13,14 @@
 
 <body>
     <div id="navbar-container"></div>
-    <script src="js/navbar.js"></script>
+    <script src="js/navbar.js" defer ></script>
 
     <div class="search-control-box">
         <label class="search-control-field">
             Sort By:
             <select id="search-sort-field">
                 <option value="price">Price</option>
-                <option value="price">Year</option>
+                <option value="year">Year</option>
             </select>
         </label>
 
@@ -61,6 +61,11 @@
         </label>
 
     </div> 
+
+    <div id="search-results" class="search-results-class">
+        
+    </div>
+    <script type="module" src="js/search.js" defer></script>
 
 
 </body>

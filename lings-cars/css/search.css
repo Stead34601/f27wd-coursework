@@ -5,3 +5,11 @@
 .search-control-field {
     
 }
+
+.search-results-class p {
+    /* this is for the text inside of the search result boxes*/
+}
+.search-results-class img {
+    /* this is for the image*/
+    align-items: right;
+}
