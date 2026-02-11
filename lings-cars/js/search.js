@@ -117,6 +117,18 @@ function displayVehicles(vehiclesToDisplay) {
         carDiv.id = (vehiclesToDisplay[i].brand + i);
         const textBlock = document.createElement("div");
 
+        //image
+        //I DO NOT KNOW HOW THIS FUNCTIONS, BUT IT DOES!
+        const imageComponent = document.createElement('img');
+        console.log(vehiclesToDisplay[i].imgURL);
+        console.log(vehiclesToDisplay[i]);
+        imageComponent.src = vehiclesToDisplay[i].imgURL;
+        imageComponent.style.displayDiv = "block";
+        imageComponent.style.float = "inline-end";
+        //THIS CANNOT GO ABOVE 14!
+        imageComponent.style.height = "14vw";
+        textBlock.appendChild(imageComponent);
+
         //type
         const typePara = document.createElement('p');
         const typeText = document.createTextNode("Type: " + vehiclesToDisplay[i].type);
@@ -152,13 +164,12 @@ function displayVehicles(vehiclesToDisplay) {
         const priceText = document.createTextNode("Price: " + vehiclesToDisplay[i].price);
         pricePara.append(priceText);
         textBlock.appendChild(pricePara);
-        carDiv.appendChild(textBlock);
 
         //add the image
         //lines below should be uncommented when the images are added
-        //const imageComponent = document.createElement('img');
-        //imageComponent.src = vehiclesToDisplay[i].imagePath;
+
         //lines above should be uncommented when images are added
+        carDiv.appendChild(textBlock);
         carA.appendChild(carDiv);
 
 

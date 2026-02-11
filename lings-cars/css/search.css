@@ -64,8 +64,12 @@
 
 .search-results-class p {
     /* this is for the text inside of the search result boxes*/
+    align-items: left;
 }
 .search-results-class img {
     /* this is for the image*/
-    align-items: right;
+    /*THIS DOES NOT WORK, maybe due to inline css usage but it shoudlnt be overwritten so idk*/
+}
+.search-results-class div {
+
 }

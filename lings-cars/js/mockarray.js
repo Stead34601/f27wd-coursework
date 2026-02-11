@@ -7,7 +7,7 @@ const mockArray = [
     "year": 2018,
     "seats": 5,
     "price": 21000,
-    "imgURL": "lings-cars/assets/images/cars/Corolla.jpeg",
+    "imgURL": "./assets/images/cars/Corolla.jpeg",
   },
     {
     "type": "Car",
@@ -17,7 +17,7 @@ const mockArray = [
     "year": 2019,
     "seats": 5,
     "price": 19100,
-    "imgURL": "lings-cars/assets/images/cars/civic.jpeg",
+    "imgURL": "./assets/images/cars/civic.jpeg",
   },
     {
     "type": "Car",
@@ -27,7 +27,7 @@ const mockArray = [
     "year": 2017,
     "seats": 5,
     "price": 19500,
-    "imgURL": "lings-cars/assets/images/cars/3-series.jpeg",
+    "imgURL": "./assets/images/cars/3-series.jpeg",
   },
     {
     "type": "Car",
@@ -37,7 +37,7 @@ const mockArray = [
     "year": 2018,
     "seats": 5,
     "price": 21000,
-    "imgURL": "lings-cars/assets/images/cars/audi-a4.jpeg",
+    "imgURL": "./assets/images/cars/audi-a4.jpeg",
   },
     {
     "type": "Car",
@@ -47,7 +47,7 @@ const mockArray = [
     "year": 2016,
     "seats": 5,
     "price": 13200,
-    "imgURL": "lings-cars/assets/images/cars/vw-golf.jpeg",
+    "imgURL": "./assets/images/cars/vw-golf.jpeg",
   },
     {
     "type": "Car",
@@ -57,7 +57,7 @@ const mockArray = [
     "year": 2017,
     "seats": 5,
     "price": 12800,
-    "imgURL": "lings-cars/assets/images/cars/focus.jpeg",
+    "imgURL": "./assets/images/cars/focus.jpeg",
   },
     {
     "type": "Van",
@@ -67,7 +67,7 @@ const mockArray = [
     "year": 2019,
     "seats": 3,
     "price": 26500,
-    "imgURL": "lings-cars/assets/images/cars/transit.jpeg",
+    "imgURL": "./assets/images/cars/transit.jpeg",
   },
     {
     "type": "Van",
@@ -77,7 +77,7 @@ const mockArray = [
     "year": 2018,
     "seats": 3,
     "price": 31000,
-     // No image exists on the site for this vehicle
+    "imgURL": "./assets/images/about-us/superling150h.jpg",
   },
     {
     "type": "Van",
@@ -87,7 +87,7 @@ const mockArray = [
     "year": 2017,
     "seats": 3,
     "price": 27500,
-    "imgURL": "lings-cars/assets/images/cars/vw-transporter.jpeg",
+    "imgURL": "./assets/images/cars/vw-transporter.jpeg",
   },
     {
     "type": "Van",
@@ -97,7 +97,7 @@ const mockArray = [
     "year": 2020,
     "seats": 3,
     "price": 22000,
-    "imgURL": "lings-cars/assets/images/cars/trafic.jpeg",
+    "imgURL": "./assets/images/cars/trafic.jpeg",
   },
     {
     "type": "Van",
@@ -107,7 +107,8 @@ const mockArray = [
     "year": 2019,
     "seats": 8,
     "price": 27000,
-     // No image exists on the site for this vehicle
+    "imgURL": "./assets/images/about-us/superling150h.jpg",
+     // No image exists on the site for this vehicle, should be changed to a 404 error
   },
     {
     "type": "Van",
@@ -117,7 +118,7 @@ const mockArray = [
     "year": 2021,
     "seats": 9,
     "price": 29500,
-    "imgURL": "lings-cars/assets/images/cars/proace-standard.jpeg",
+    "imgURL": "./assets/images/cars/proace-standard.jpeg",
       //There was no verso image on the site, hence the proace standard was used
   },
 ]
